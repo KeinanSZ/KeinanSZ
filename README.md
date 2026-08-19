@@ -1,4 +1,4 @@
-# Olá! Eu sou o Keinan 👋
+# Olá! Souza Keinan de Souza, estudante de engenharia de software👋
 
 Bem-vindo ao meu GitHub! Sou um profissional apaixonado por unir o pensamento analítico e a gestão de processos da construção civil com o desenvolvimento de software e a tecnologia educacional. 
 
@@ -6,7 +6,7 @@ Bem-vindo ao meu GitHub! Sou um profissional apaixonado por unir o pensamento an
 
 - 🏗️ Trago a experiência de gestão em canteiros de obras e elaboração de relatórios técnicos para a criação de soluções eficientes e estruturadas em código.
 - 🎮 Desenvolvedor do **SQEducaPlay**, um projeto de gamificação que une ensino e jogos interativos (apresentado no evento FLIS).
-- 🧮 Entusiasta do estudo de física matemática e cálculo vetorial voltados para aplicações em engines de jogos e robótica.
+- 🧮 
 - 💻 Fascinado por high-performance computing, hardware e otimização de sistemas operacionais, utilizando diariamente tanto Ubuntu quanto Windows.
 
 ## 🚀 Projetos em Destaque
