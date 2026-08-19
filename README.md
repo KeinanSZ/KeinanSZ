@@ -1,6 +1,13 @@
 # Olá! Eu sou o Keinan de Souza👋
 
-Bem-vindo ao meu GitHub! Sou uma pessoa apaixonada por tecnologia e estudante de Engenharia de Software, buscando unir o pensamento analítico e a experiência de gestão da construção civil com o desenvolvimento de soluções digitais.
+Bem-vindo ao meu GitHub! Sou uma pessoa apaixonada por tecnologia e estudante de Engenharia de Software, buscando unir o pensamento analítico e a experiência de gestão da construção civil com [...]
+
+## 🧱 Gráfico 3D de Contribuições
+
+<p align="center">
+  <img src="profile-3d-contrib/profile-night-rainbow.svg" alt="3D Profile Night Rainbow" />
+</p>
+
 ## 🌟 Visualização 3D Interativa (GlowHub)
 
 <p align="center">
@@ -9,9 +16,12 @@ Bem-vindo ao meu GitHub! Sou uma pessoa apaixonada por tecnologia e estudante de
   </a>
 </p>
 
-<iframe src="https://glowhub.dev/embed?user=KeinanSZ" width="100%" height="600" frameborder="0" style="border-radius: 10px; margin-top: 20px;"></iframe>
+<div align="center" style="margin: 20px 0;">
+  <iframe src="https://glowhub.dev/embed?user=KeinanSZ" width="100%" height="600" frameborder="0" style="border-radius: 10px;"></iframe>
+</div>
 
 Ou acesse diretamente: [https://glowhub.dev/KeinanSZ](https://glowhub.dev/KeinanSZ)
+
 ## 👨‍💻 Sobre mim
 
 - 🎓 Estudante de **Engenharia de Software** pela **Universidade de Vassouras**.
