@@ -1,13 +1,14 @@
-# Olá! Souza Keinan de Souza, estudante de engenharia de software👋
+# Olá! Eu sou o Keinan de Souza👋
 
-Bem-vindo ao meu GitHub! Sou um profissional apaixonado por unir o pensamento analítico e a gestão de processos da construção civil com o desenvolvimento de software e a tecnologia educacional. 
+Bem-vindo ao meu GitHub! Sou uma pessoa apaixonada por tecnologia e estudante de Engenharia de Software, buscando unir o pensamento analítico e a experiência de gestão da construção civil com o desenvolvimento de soluções digitais.
 
 ## 👨‍💻 Sobre mim
 
-- 🏗️ Trago a experiência de gestão em canteiros de obras e elaboração de relatórios técnicos para a criação de soluções eficientes e estruturadas em código.
+- 🎓 Estudante de **Engenharia de Software** pela **Universidade de Vassouras**.
+- 📱 Apaixonado por **Desenvolvimento Mobile** e **Cybersecurity**, buscando sempre construir soluções acessíveis, seguras e de alto impacto.
+- 🏗️ Trago a experiência de gestão em canteiros de obras e elaboração de relatórios técnicos para a estruturação de códigos e arquiteturas eficientes.
 - 🎮 Desenvolvedor do **SQEducaPlay**, um projeto de gamificação que une ensino e jogos interativos (apresentado no evento FLIS).
-- 🧮 
-- 💻 Fascinado por high-performance computing, hardware e otimização de sistemas operacionais, utilizando diariamente tanto Ubuntu quanto Windows.
+- 💻 Fascinado por high-performance computing, hardware e otimização de sistemas operacionais.
 
 ## 🚀 Projetos em Destaque
 
@@ -17,10 +18,13 @@ Bem-vindo ao meu GitHub! Sou um profissional apaixonado por unir o pensamento an
 ## 🛠️ Tecnologias e Ferramentas
 
 <div align="left">
-  <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" alt="Ubuntu" />
-  <img src="https://img.shields.io/badge/Windows_11-0078D6?style=for-the-badge&logo=windows-11&logoColor=white" alt="Windows 11" />
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
-  <!-- Dica: Adicione outras linguagens aqui, como JavaScript, CSS, Python ou C++ copiando o formato acima! -->
+  <!-- Sistemas Operacionais -->
+  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux" />
+  <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows" />
+  
+  <!-- Linguagens -->
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white" alt="Dart" />
 </div>
 
 ## 📊 Minhas Estatísticas
@@ -33,4 +37,3 @@ Bem-vindo ao meu GitHub! Sou um profissional apaixonado por unir o pensamento an
 ## 📫 Como me encontrar
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/keinansouza/)
--->
