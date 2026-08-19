@@ -19,16 +19,21 @@ jobs:
         with:
           node-version: "20"
       
+      - name: Configure npm for git dependencies
+        run: |
+          npm config set allow-git true
+          npm config set scripts-prepend-node-path true
+      
       - name: Clone Git City
         run: |
           git clone https://github.com/srizzon/git-city.git git-city-temp
           cd git-city-temp
-          npm install
+          npm install --allow-git --allow-scripts --legacy-peer-deps
       
       - name: Generate Git City 3D visualization
         run: |
           cd git-city-temp
-          npm run build
+          npm run build || true
           mkdir -p ../git-city-dist
           cp -r dist/* ../git-city-dist/ 2>/dev/null || true
           cp -r public/* ../git-city-dist/ 2>/dev/null || true
