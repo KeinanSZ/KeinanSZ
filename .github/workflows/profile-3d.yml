@@ -1,5 +1,5 @@
-name: Generate Git City 3D Profile
- 
+name: Generate Matrix Rain 3D GIF
+
 on:
   schedule:
     - cron: "0 18 * * *"
@@ -8,61 +8,99 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: generate-git-city-profile
+    name: generate-matrix-rain-3d
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@v4
       
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Python
+        uses: actions/setup-python@v4
         with:
-          node-version: "20"
+          python-version: "3.11"
       
-      - name: Configure npm for git dependencies
+      - name: Install dependencies
         run: |
-          npm config set allow-git true
-          npm config set scripts-prepend-node-path true
+          pip install Pillow
+          sudo apt-get update
+          sudo apt-get install -y python3-pil
       
-      - name: Clone Git City
+      - name: Create Matrix Rain 3D script
         run: |
-          git clone https://github.com/srizzon/git-city.git git-city-temp
-          cd git-city-temp
-          npm install --allow-git --allow-scripts --legacy-peer-deps
-      
-      - name: Generate Git City 3D visualization
-        run: |
-          cd git-city-temp
-          npm run build || true
-          mkdir -p ../git-city-dist
-          cp -r dist/* ../git-city-dist/ 2>/dev/null || true
-          cp -r public/* ../git-city-dist/ 2>/dev/null || true
-      
-      - name: Update README with Git City link
-        run: |
-          mkdir -p git-city
+          cat > generate_matrix.py << 'PYEOF'
+          import os
+          from PIL import Image, ImageDraw, ImageFont
+          import random
           
-          if [ -d "git-city-dist" ]; then
-            cp -r git-city-dist/* git-city/ 2>/dev/null || true
-          fi
+          WIDTH, HEIGHT = 800, 400
+          FRAMES = 60
+          CHARS = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン'
           
-          if ! grep -q "git-city" README.md; then
-            cat >> README.md << 'EOF'
-
-## 🌃 Visualização 3D Interativa (Git City)
-
-Explore seu perfil GitHub como uma **cidade 3D em pixel art**! Cada repositório é um prédio, e a altura representa a atividade de commits.
-
-🔗 **[Clique aqui para ver sua Git City](https://srizzon.github.io/git-city/#/user/KeinanSZ)**
-
-Ou acesse: `https://srizzon.github.io/git-city/#/user/KeinanSZ`
-EOF
-          fi
+          class Particle:
+              def __init__(self):
+                  self.x = random.random() * WIDTH
+                  self.y = random.random() * HEIGHT
+                  self.z = random.random() * 500 - 250
+                  self.vx = (random.random() - 0.5) * 2
+                  self.vy = random.random() * 2 + 1
+                  self.vz = (random.random() - 0.5) * 3
+                  self.char = random.choice(CHARS)
+                  self.opacity = random.random() * 0.5 + 0.5
+              
+              def update(self):
+                  self.x += self.vx
+                  self.y += self.vy
+                  self.z += self.vz
+                  
+                  if self.y > HEIGHT:
+                      self.y = -10
+                      self.x = random.random() * WIDTH
+                      self.char = random.choice(CHARS)
+                  if self.x < 0 or self.x > WIDTH:
+                      self.x = random.random() * WIDTH
+              
+              def get_color(self):
+                  depth = (self.z + 250) / 500
+                  intensity = int(255 * (0.5 + depth * 0.5))
+                  return (0, intensity, 80)
+              
+              def get_size(self):
+                  return int(10 + (self.z + 250) / 500 * 15)
+          
+          particles = [Particle() for _ in range(80)]
+          frames = []
+          
+          for frame in range(FRAMES):
+              img = Image.new('RGB', (WIDTH, HEIGHT), color=(0, 0, 0))
+              draw = ImageDraw.Draw(img, 'RGBA')
+              
+              try:
+                  font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf", 12)
+              except:
+                  font = ImageFont.load_default()
+              
+              for p in particles:
+                  p.update()
+                  color = p.get_color() + (200,)
+                  try:
+                      big_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf", p.get_size())
+                      draw.text((int(p.x), int(p.y)), p.char, font=big_font, fill=color)
+                  except:
+                      draw.text((int(p.x), int(p.y)), p.char, font=font, fill=color)
+              
+              frames.append(img)
+          
+          # Create GIF
+          frames[0].save('matrix-rain-3d.gif', save_all=True, append_images=frames[1:], duration=50, loop=0)
+          print("Matrix Rain 3D GIF created successfully!")
+          PYEOF
+          
+          python3 generate_matrix.py
       
       - name: Commit & Push
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add -A
-          git commit -m "chore: update git-city 3d visualization" || exit 0
+          git add matrix-rain-3d.gif
+          git commit -m "chore: update matrix rain 3d visualization" || exit 0
           git push
