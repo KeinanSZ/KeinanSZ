@@ -34,6 +34,13 @@ Bem-vindo ao meu GitHub! Sou uma pessoa apaixonada por tecnologia e estudante de
   <img src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=KeinanSZ&layout=compact&langs_count=7&theme=dracula" alt="Linguagens mais usadas" />
 </p>
 
+## 🐍 Snake Eating My Contributions
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/KeinanSZ/KeinanSZ/output/github-contribution-grid-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/KeinanSZ/KeinanSZ/output/github-contribution-grid-snake.svg">
+  <img alt="GitHub Snake" src="https://raw.githubusercontent.com/KeinanSZ/KeinanSZ/output/github-contribution-grid-snake.svg">
+</picture>
 
 ## 📫 Como me encontrar
 
