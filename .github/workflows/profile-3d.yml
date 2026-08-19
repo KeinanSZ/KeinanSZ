@@ -1,4 +1,4 @@
-name: Generate GlowHub 3D Profile
+name: Generate Git City 3D Profile
 
 on:
   schedule:
@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: generate-glowhub-profile
+    name: generate-git-city-profile
     permissions:
       contents: write
     steps:
@@ -19,34 +19,39 @@ jobs:
         with:
           node-version: "20"
       
-      - name: Clone GlowHub
+      - name: Clone Git City
         run: |
-          git clone https://github.com/thomscoder/glowhub.git glowhub-temp
-          cd glowhub-temp
+          git clone https://github.com/srizzon/git-city.git git-city-temp
+          cd git-city-temp
           npm install
       
-      - name: Generate GlowHub visualization
+      - name: Generate Git City 3D visualization
         run: |
-          cd glowhub-temp
+          cd git-city-temp
           npm run build
-          mkdir -p ../glowhub-dist
-          cp -r dist/* ../glowhub-dist/ 2>/dev/null || true
+          mkdir -p ../git-city-dist
+          cp -r dist/* ../git-city-dist/ 2>/dev/null || true
+          cp -r public/* ../git-city-dist/ 2>/dev/null || true
       
-      - name: Update README with GlowHub
+      - name: Update README with Git City link
         run: |
-          if [ ! -d "glowhub-dist" ]; then
-            echo "GlowHub build failed, creating fallback embed code"
+          mkdir -p git-city
+          
+          if [ -d "git-city-dist" ]; then
+            cp -r git-city-dist/* git-city/ 2>/dev/null || true
           fi
           
-          # Add GlowHub iframe to README if not already present
-          if ! grep -q "glowhub" README.md; then
+          if ! grep -q "git-city" README.md; then
             cat >> README.md << 'EOF'
-          
-## 3D Profile Visualization
-<iframe src="https://glowhub.dev/embed?user=${{ github.repository_owner }}" width="100%" height="600" frameborder="0" style="border-radius: 10px;"></iframe>
-          
-Or view at: https://glowhub.dev/${{ github.repository_owner }}
-          EOF
+
+## 🌃 Visualização 3D Interativa (Git City)
+
+Explore seu perfil GitHub como uma **cidade 3D em pixel art**! Cada repositório é um prédio, e a altura representa a atividade de commits.
+
+🔗 **[Clique aqui para ver sua Git City](https://srizzon.github.io/git-city/#/user/KeinanSZ)**
+
+Ou acesse: `https://srizzon.github.io/git-city/#/user/KeinanSZ`
+EOF
           fi
       
       - name: Commit & Push
@@ -54,5 +59,5 @@ Or view at: https://glowhub.dev/${{ github.repository_owner }}
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add -A
-          git commit -m "chore: update glowhub 3d profile" || exit 0
+          git commit -m "chore: update git-city 3d visualization" || exit 0
           git push
