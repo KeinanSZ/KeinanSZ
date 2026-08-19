@@ -1,7 +1,11 @@
 # Olá! Eu sou o Keinan de Souza👋
 
 Bem-vindo ao meu GitHub! Sou uma pessoa apaixonada por tecnologia e estudante de Engenharia de Software, buscando unir o pensamento analítico e a experiência de gestão da construção civil com o desenvolvimento de soluções digitais.
+## 🧱 Gráfico 3D de Contribuições
 
+<p align="center">
+  <img src="profile-3d-contrib/profile-night-rainbow.svg" alt="3D Profile Night Rainbow" />
+</p>
 ## 👨‍💻 Sobre mim
 
 - 🎓 Estudante de **Engenharia de Software** pela **Universidade de Vassouras**.
