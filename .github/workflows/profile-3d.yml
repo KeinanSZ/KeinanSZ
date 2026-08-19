@@ -13,10 +13,14 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - uses: yoshi3891/github-profile-3d-contrib@main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Generate 3D Profile
+        run: |
+          npx github-profile-3d-contrib ${{ github.repository_owner }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          USERNAME: ${{ github.repository_owner }}
       - name: Commit & Push
         run: |
           git config user.name github-actions
