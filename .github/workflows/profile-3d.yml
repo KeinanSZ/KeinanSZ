@@ -13,6 +13,8 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          node-version: '24'
       - name: Generate 3D Profile
         uses: yoshi389111/github-profile-3d-contrib@v0.9.3
         env:
