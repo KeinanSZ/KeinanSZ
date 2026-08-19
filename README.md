@@ -11,7 +11,7 @@ Bem-vindo ao meu GitHub! Sou um profissional apaixonado por unir o pensamento an
 
 ## 🚀 Projetos em Destaque
 
-- **[SQEducaPlay](https://github.com/KeinanSZ/SQEducaPlay)**: Aplicação focada em transformar a educação infantil através da gamificação.
+- **[SQEducaPlay](https://github.com/KeinanSZ/SQEducaPlay-Alunos)**: Aplicação focada em transformar a educação infantil através da gamificação.
 - **[Super Mario](https://github.com/KeinanSZ/super-mario)**: Meu primeiro projeto front-end.
 
 ## 🛠️ Tecnologias e Ferramentas
