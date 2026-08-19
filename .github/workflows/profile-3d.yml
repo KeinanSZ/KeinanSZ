@@ -1,4 +1,4 @@
-name: GitHub-Profile-3D-Contrib
+name: Generate GlowHub 3D Profile
 
 on:
   schedule:
@@ -8,19 +8,51 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: generate-github-profile-3d-contrib
+    name: generate-glowhub-profile
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - name: Generate 3D Profile
-        uses: yoshi389111/github-profile-3d-contrib@v0.9.3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      
+      - name: Clone GlowHub
+        run: |
+          git clone https://github.com/thomscoder/glowhub.git glowhub-temp
+          cd glowhub-temp
+          npm install
+      
+      - name: Generate GlowHub visualization
+        run: |
+          cd glowhub-temp
+          npm run build
+          mkdir -p ../glowhub-dist
+          cp -r dist/* ../glowhub-dist/ 2>/dev/null || true
+      
+      - name: Update README with GlowHub
+        run: |
+          if [ ! -d "glowhub-dist" ]; then
+            echo "GlowHub build failed, creating fallback embed code"
+          fi
+          
+          # Add GlowHub iframe to README if not already present
+          if ! grep -q "glowhub" README.md; then
+            cat >> README.md << 'EOF'
+          
+## 3D Profile Visualization
+<iframe src="https://glowhub.dev/embed?user=${{ github.repository_owner }}" width="100%" height="600" frameborder="0" style="border-radius: 10px;"></iframe>
+          
+Or view at: https://glowhub.dev/${{ github.repository_owner }}
+          EOF
+          fi
+      
       - name: Commit & Push
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add -A .
-          git commit -m "generated profile 3d" || exit 0
+          git add -A
+          git commit -m "chore: update glowhub 3d profile" || exit 0
           git push
