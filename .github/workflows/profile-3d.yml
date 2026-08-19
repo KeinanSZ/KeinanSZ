@@ -1,5 +1,5 @@
 name: Generate Git City 3D Profile
-
+ 
 on:
   schedule:
     - cron: "0 18 * * *"
