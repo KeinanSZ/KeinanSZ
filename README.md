@@ -1,10 +1,7 @@
 # Olá! Eu sou o Keinan de Souza👋
 
-Bem-vindo ao meu GitHub! Sou uma pessoa apaixonada por tecnologia e estudante de Engenharia de Software, buscando unir o pensamento analítico e a experiência de gestão da construção civil com [...]
+Bem-vindo ao meu GitHub! Sou uma pessoa apaixonada por tecnologia e estudante de Engenharia de Software, buscando unir o pensamento analítico e a experiência de gestão da construção civil com o desenvolvimento de soluções digitais.
 
-## 🌃 Visualização 3D Interativa (Matrix Rain)
-
-![Matrix Rain 3D](./matrix-rain-3d.gif)
 
 ## 👨‍💻 Sobre mim
 
