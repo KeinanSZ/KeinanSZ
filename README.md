@@ -2,6 +2,13 @@
 
 Bem-vindo ao meu GitHub! Sou uma pessoa apaixonada por tecnologia e estudante de Engenharia de Software, buscando unir o pensamento analítico e a experiência de gestão da construção civil com [...]
 
+## 🌃 Visualização 3D Interativa (Git City)
+
+Explore seu perfil GitHub como uma **cidade 3D em pixel art**! Cada repositório é um prédio, e a altura representa a atividade de commits.
+
+🔗 **[Clique aqui para ver sua Git City](https://srizzon.github.io/git-city/#/user/KeinanSZ)**
+
+Ou acesse: `https://srizzon.github.io/git-city/#/user/KeinanSZ`
 
 ## 👨‍💻 Sobre mim
 
